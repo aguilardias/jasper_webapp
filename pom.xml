@@ -42,6 +42,13 @@
 			<version>2.2.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.10-FINAL</version>
+		</dependency>
+		
 
 		<!-- Jackson dependencies -->
 		<dependency>
