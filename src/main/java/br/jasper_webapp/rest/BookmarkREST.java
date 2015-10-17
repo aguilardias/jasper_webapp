@@ -1,6 +1,9 @@
 package br.jasper_webapp.rest;
 
+
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -14,23 +17,54 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.UriInfo;
 
-import br.jasper_webapp.business.BookmarkBC;
-import br.jasper_webapp.entity.Bookmark;
 import br.gov.frameworkdemoiselle.BadRequestException;
 import br.gov.frameworkdemoiselle.NotFoundException;
+import br.gov.frameworkdemoiselle.report.Report;
+import br.gov.frameworkdemoiselle.report.Type;
 import br.gov.frameworkdemoiselle.security.LoggedIn;
 import br.gov.frameworkdemoiselle.transaction.Transactional;
 import br.gov.frameworkdemoiselle.util.Strings;
 import br.gov.frameworkdemoiselle.util.ValidatePayload;
+import br.jasper_webapp.business.BookmarkBC;
+import br.jasper_webapp.entity.Bookmark;
+import br.jasper_webapp.entity.Report1DTO;
 
 @Path("bookmark")
 public class BookmarkREST {
 
 	@Inject
 	private BookmarkBC bc;
+
+	private static final String JASPER = "reports/4-com-tabela.jasper";
+
+	@Inject
+	@br.gov.frameworkdemoiselle.report.annotation.Path(JASPER)
+	private Report relatorio;
+
+	@GET
+	@Path("report1")
+	@Produces(MediaType.APPLICATION_OCTET_STREAM)
+	public Response report1() {
+
+
+		List<Report1DTO> lista = new ArrayList<Report1DTO>();
+		Report1DTO report = new Report1DTO();
+		report.setLinhas(bc.findAll());
+		lista.add(report);
+
+
+		byte[] buffer = relatorio.export(lista, new HashMap<String, Object>(), Type.PDF);
+		ResponseBuilder response = Response.ok(buffer);
+
+		response.header("Content-Disposition", "attachment; filename=newfile.pdf");
+		return response.build();
+	}
+
 
 	@GET
 	@Produces("application/json")

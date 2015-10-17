@@ -34,6 +34,14 @@
 		    <scope>compile</scope>
 		</dependency>
 		-->
+		
+		<dependency>
+			<groupId>br.gov.frameworkdemoiselle.component</groupId>
+			<artifactId>demoiselle-report</artifactId>
+			<type>jar</type>
+			<version>2.2.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
 
 		<!-- Jackson dependencies -->
 		<dependency>
@@ -59,4 +67,56 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<build>
+		<plugins>
+		
+		<!-- JasperReports Compilation -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jasperreports-maven-plugin</artifactId>
+				<version>1.0-beta-2</version>
+				<configuration>
+					<outputDirectory>target/classes/reports</outputDirectory>
+					<sourceDirectory>src/main/resources/reports</sourceDirectory>
+					<additionalClasspath>src/main/java/</additionalClasspath>
+					<maven.compiler.source>1.7</maven.compiler.source>
+					<maven.compiler.target>1.7</maven.compiler.target>
+					<compiler>net.sf.jasperreports.engine.design.JRJdtCompiler</compiler>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile-reports</goal>
+						</goals>
+					</execution>
+				</executions>
+
+				<dependencies>
+					<dependency>
+						<groupId>net.sf.jasperreports</groupId>
+						<artifactId>jasperreports</artifactId>
+						<version>6.0.0</version>
+						<scope>compile</scope>
+					</dependency>
+					<!-- <dependency>
+						<groupId>commons-digester</groupId>
+						<artifactId>commons-digester</artifactId>
+						<version>1.8</version>
+					</dependency>
+					<dependency>
+						<groupId>commons-collections</groupId>
+						<artifactId>commons-collections</artifactId>
+						<version>3.2</version>
+					</dependency>
+					<dependency>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+						<version>1.2.14</version>
+					</dependency> -->
+				</dependencies>
+			</plugin>
+			
+		</plugins>
+	</build>
 </project>
