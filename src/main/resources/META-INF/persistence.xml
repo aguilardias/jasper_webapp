@@ -9,6 +9,9 @@
 		<non-jta-data-source>java:jboss/datasources/ExampleDS</non-jta-data-source>
 
 		<class>br.jasper_webapp.entity.Area</class>
+		<class>br.jasper_webapp.entity.Gasto</class>
+		<class>br.jasper_webapp.entity.Pessoa</class>
+		<class>br.jasper_webapp.entity.Profissao</class>
 
 		<properties>
 			<property name="hibernate.show_sql" value="true" />

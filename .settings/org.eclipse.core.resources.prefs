@@ -1,7 +1,9 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
-encoding//src/main/resources/reports/4-com-tabela.jrxml=UTF-8
+encoding//src/main/resources/reports/areas.jrxml=UTF-8
+encoding//src/main/resources/reports/gastos.jrxml=UTF-8
+encoding//src/main/resources/reports/pessoas.jrxml=UTF-8
 encoding//src/test/java=UTF-8
 encoding//src/test/resources=UTF-8
 encoding/<project>=UTF-8

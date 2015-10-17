@@ -4,12 +4,14 @@ import static javax.persistence.GenerationType.SEQUENCE;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Area implements Serializable {
+public class Profissao implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -18,14 +20,17 @@ public class Area implements Serializable {
 	@GeneratedValue(strategy = SEQUENCE)
 	private Long id;
 
+	private String profissao;
 	
-	private String area;
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Area area;
 
-	
-	public Area() {
+
+	public Profissao() {
 	}
 	
-	public Area(String area) {
+	public Profissao(String profissao, Area area) {
+		this.profissao = profissao;
 		this.area = area;
 	}
 
@@ -34,18 +39,36 @@ public class Area implements Serializable {
 		return id;
 	}
 
+
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getArea() {
+
+	public String getProfissao() {
+		return profissao;
+	}
+
+
+	public void setProfissao(String profissao) {
+		this.profissao = profissao;
+	}
+
+
+	public Area getArea() {
 		return area;
 	}
 
-	public void setArea(String area) {
+
+	public void setArea(Area area) {
 		this.area = area;
 	}
 
+
+	
+	
+	
+	
 	
 
 }
