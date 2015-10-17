@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2015-10-16T11:54:41 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="16eddf64-7231-432b-a2eb-14a8e1fe9d94">
+<!-- 2015-10-17T11:03:30 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listar areas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="16eddf64-7231-432b-a2eb-14a8e1fe9d94">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="net.sf.jasperreports.export.xls.one.page.per.sheet" value="true"/>
 	<property name="newproperty" value="true"/>
@@ -43,20 +43,97 @@
 			<rightPen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
-	<subDataset name="Dataset2" uuid="540e058d-6c63-4090-8abb-1f73a562b986">
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="b3da4531-668a-487c-94f6-2cb212128cb6">
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-		<queryString language="SQL">
+		<queryString>
 			<![CDATA[]]>
 		</queryString>
 		<field name="id" class="java.lang.Long">
 			<fieldDescription><![CDATA[id]]></fieldDescription>
 		</field>
-		<field name="description" class="java.lang.String">
-			<fieldDescription><![CDATA[description]]></fieldDescription>
-		</field>
-		<field name="link" class="java.lang.String">
-			<fieldDescription><![CDATA[link]]></fieldDescription>
+		<field name="area" class="java.lang.String">
+			<fieldDescription><![CDATA[area]]></fieldDescription>
 		</field>
 	</subDataset>
 	<queryString>
@@ -78,83 +155,73 @@
 			</staticText>
 		</band>
 	</title>
-	<detail>
-		<band height="80" splitType="Stretch">
-			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+	<pageHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="5" width="100" height="30" uuid="c2887afc-6db7-4399-8a63-3d560999f9a6"/>
+				<text><![CDATA[page header]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="100" height="30" uuid="30839da3-f146-4874-abcd-ed17b3ff15b8"/>
+				<text><![CDATA[page footer]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="352" y="0" width="100" height="30" uuid="8ff69ee8-87aa-43ab-b6e4-d2fc574d1657"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="452" y="0" width="100" height="30" uuid="6b312185-b25e-4a19-b4f9-d7d703abf01c"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="60" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<componentElement>
-				<reportElement x="0" y="0" width="555" height="60" uuid="b32c8a68-9b30-4f0f-99e5-903a6f25bfe0">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<reportElement x="0" y="0" width="200" height="60" uuid="45f09226-b5a3-45d7-8abc-4e93c1539f3f">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-					<datasetRun subDataset="Dataset2" uuid="a53d9229-ff89-41b0-8fdf-e4b60dbe9436">
+					<datasetRun subDataset="Dataset1" uuid="2e8ff352-109c-4262-a07a-7d72bd0fd128">
 						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{linhas})]]></dataSourceExpression>
 					</datasetRun>
-					<jr:column width="66" uuid="bc5ea3c1-4900-4afe-983c-8951c865dfbb">
-						<jr:columnHeader style="Table_CH" height="30">
+					<jr:column width="100" uuid="2ec4c11e-5878-4447-a614-c4ad73202a93">
+						<jr:columnHeader style="Table 3_CH" height="30">
 							<staticText>
-								<reportElement x="0" y="0" width="66" height="30" uuid="c977f578-ce1f-4e5c-840a-4875b5ead87c"/>
-								<box padding="5"/>
-								<textElement textAlignment="Left" verticalAlignment="Middle"/>
-								<text><![CDATA[ID]]></text>
+								<reportElement x="0" y="0" width="100" height="30" uuid="85002f64-ec5a-4e1f-b446-d2d70af8bff2"/>
+								<text><![CDATA[id]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="Table_TD" height="30">
+						<jr:detailCell style="Table 3_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="66" height="30" uuid="10d73dc4-7ffc-4ef3-ade9-0e396c4a5217"/>
-								<box padding="5"/>
+								<reportElement x="0" y="0" width="100" height="30" uuid="13b0c83a-9381-4c3e-aff4-8864582ef89c"/>
 								<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="124" uuid="fa91cf04-00bd-4686-b3a0-0d7a100227d4">
-						<jr:columnHeader style="Table_CH" height="30">
+					<jr:column width="100" uuid="98950492-8301-4deb-924a-ee3b7d34770d">
+						<jr:columnHeader style="Table 3_CH" height="30">
 							<staticText>
-								<reportElement x="0" y="0" width="124" height="30" uuid="3e70c671-eecc-442c-8958-64004f4dfeed"/>
-								<box padding="5"/>
-								<textElement textAlignment="Left" verticalAlignment="Middle"/>
-								<text><![CDATA[TITULO]]></text>
+								<reportElement x="0" y="0" width="100" height="30" uuid="d12b694a-44fa-4db0-a7d4-401b5013e630"/>
+								<text><![CDATA[area]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="Table_TD" height="30">
-							<textField isStretchWithOverflow="true">
-								<reportElement x="0" y="0" width="124" height="30" uuid="460d5b24-1e8c-4882-953f-fe8c81a24027"/>
-								<box padding="5"/>
-								<textElement>
-									<font size="10"/>
-								</textElement>
-								<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-					<jr:column width="358" uuid="3ea2e749-2a5c-4462-823d-6c0bcecaa317">
-						<jr:columnHeader style="Table_CH" height="30">
-							<staticText>
-								<reportElement x="0" y="0" width="358" height="30" uuid="d16f596b-3417-47a5-8fe2-28e7008223a0"/>
-								<box padding="5"/>
-								<textElement textAlignment="Left" verticalAlignment="Middle"/>
-								<text><![CDATA[TEXTO]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:detailCell style="Table_TD" height="30">
-							<textField isStretchWithOverflow="true">
-								<reportElement x="0" y="0" width="358" height="30" uuid="84dd4bcf-9868-4c4b-af76-562f99523eb0"/>
-								<box padding="5"/>
-								<textFieldExpression><![CDATA[$F{link}]]></textFieldExpression>
+						<jr:detailCell style="Table 3_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="3a29ce5c-8b0c-468f-bc68-1985fd81c4e4"/>
+								<textFieldExpression><![CDATA[$F{area}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
 				</jr:table>
 			</componentElement>
 		</band>
-	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
 	</summary>
 </jasperReport>
