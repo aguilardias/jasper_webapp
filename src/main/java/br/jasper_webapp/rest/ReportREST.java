@@ -60,7 +60,7 @@ public class ReportREST {
 	@Produces(MediaType.APPLICATION_OCTET_STREAM)
 	public Response noticias(@QueryParam("filename") String filename) {
 		
-		byte[] buffer = relatorioAreas.export(pessoaBC.findAll(), new HashMap<String, Object>(), Type.PDF);
+		byte[] buffer = relatorioPessoas.export(pessoaBC.findAll(), new HashMap<String, Object>(), Type.PDF);
 		ResponseBuilder response = Response.ok(buffer);
 
 		response.type("application/pdf");

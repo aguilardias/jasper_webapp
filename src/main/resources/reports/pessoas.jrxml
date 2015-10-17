@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2015-10-17T16:12:01 -->
+<!-- 2015-10-17T16:40:17 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pessoas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="269a2f1f-e688-461e-8130-c11e0a980964">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
@@ -16,11 +16,11 @@
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="titulo" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[nome]]></fieldDescription>
 	</field>
-	<field name="texto" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
+	<field name="nascimento" class="java.util.Date">
+		<fieldDescription><![CDATA[nascimento]]></fieldDescription>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -47,43 +47,27 @@
 	<detail>
 		<band height="91" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-			<textField isStretchWithOverflow="true">
-				<reportElement stretchType="RelativeToTallestObject" x="0" y="5" width="555" height="20" uuid="c09fffc7-931a-4879-b8cc-3c8ff13e45fa">
-					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-				<box padding="0">
-					<topPen lineWidth="0.0"/>
-					<leftPen lineWidth="0.0"/>
-					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
-				</box>
-				<textFieldExpression><![CDATA["Nome: " + $F{titulo}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement stretchType="RelativeToTallestObject" x="0" y="30" width="555" height="20" uuid="60ac6cd8-16e1-4f75-93d8-fb384398fbc8">
-					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-				<box padding="0">
-					<topPen lineWidth="0.0"/>
-					<leftPen lineWidth="0.0"/>
-					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
-				</box>
-				<textFieldExpression><![CDATA["Nascimento: " + $F{texto}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement positionType="Float" x="0" y="60" width="100" height="20" uuid="91fb39e6-df26-47ae-a879-9f4daf67c8ce">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-				<text><![CDATA[texto final]]></text>
-			</staticText>
 			<line>
-				<reportElement positionType="Float" x="0" y="80" width="555" height="1" uuid="86b0115e-7290-4a76-a93f-b56824205620">
+				<reportElement positionType="Float" x="0" y="60" width="555" height="1" uuid="86b0115e-7290-4a76-a93f-b56824205620">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 			</line>
+			<staticText>
+				<reportElement x="0" y="5" width="80" height="19" uuid="ab15dc15-066d-4266-88c0-1217cf660e2f"/>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="80" height="19" uuid="7317d746-47c2-4d5f-b4ea-10729ae3ac7d"/>
+				<text><![CDATA[Nascimento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="6" width="140" height="17" uuid="b8cb3301-8419-485a-bd49-9d17f8e8322f"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField pattern="M/d/yyyy">
+				<reportElement x="80" y="30" width="140" height="18" uuid="8cb0ad81-c076-43c8-8a36-a67c88130734"/>
+				<textFieldExpression><![CDATA[$F{nascimento}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<pageFooter>
@@ -104,12 +88,4 @@
 			</textField>
 		</band>
 	</pageFooter>
-	<summary>
-		<band height="60">
-			<staticText>
-				<reportElement x="0" y="30" width="100" height="30" uuid="2347bcc8-b126-49b5-833e-d7d0a84ff02e"/>
-				<text><![CDATA[sumario]]></text>
-			</staticText>
-		</band>
-	</summary>
 </jasperReport>
