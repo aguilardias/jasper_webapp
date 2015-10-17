@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
@@ -33,20 +34,18 @@ public class AreaREST {
 	@GET
 	@Path("listar")
 	@Produces(MediaType.APPLICATION_OCTET_STREAM)
-	public Response report1() {
-
+	public Response report1(@QueryParam("filename") String filename) {
 
 		List<ReportAreaDTO> lista = new ArrayList<ReportAreaDTO>();
 		ReportAreaDTO report = new ReportAreaDTO();
 		report.setLinhas(bc.findAll());
 		lista.add(report);
 
-
 		byte[] buffer = relatorio.export(lista, new HashMap<String, Object>(), Type.PDF);
 		ResponseBuilder response = Response.ok(buffer);
 
 		response.type("application/pdf");
-		response.header("Content-Disposition", "attachment; filename=newfile.pdf");
+		response.header("Content-Disposition", String.format("attachment; filename=%s", filename));
 		
 		return response.build();
 	}
