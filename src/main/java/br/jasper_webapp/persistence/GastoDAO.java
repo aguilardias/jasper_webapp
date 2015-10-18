@@ -2,6 +2,8 @@ package br.jasper_webapp.persistence;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import br.gov.frameworkdemoiselle.stereotype.PersistenceController;
@@ -13,6 +15,9 @@ import br.jasper_webapp.entity.Gasto;
 public class GastoDAO extends JPACrud<Gasto, Long> {
 
 	private static final long serialVersionUID = 1L;
+	
+	@Inject
+    protected EntityManager em;
 
 	public List<LinhaGastosDTO> listarGastosPorPessoaMes() {
 		String jpql = "select new br.jasper_webapp.dto.LinhaGastosDTO("
@@ -21,7 +26,7 @@ public class GastoDAO extends JPACrud<Gasto, Long> {
 				+ " from Gasto g "
 				+ " inner join g.pessoa p ";
 
-		TypedQuery<LinhaGastosDTO> query = getEntityManager().createQuery(jpql, LinhaGastosDTO.class);
+		TypedQuery<LinhaGastosDTO> query = em.createQuery(jpql, LinhaGastosDTO.class);
 		
 		return query.getResultList();
 	}

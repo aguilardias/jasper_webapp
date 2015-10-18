@@ -38,6 +38,8 @@ public class ReportREST {
 
 	private static final String JASPER_AREAS = "reports/areas.jasper";
 	
+	private static final String JASPER_AREAS_XLS = "reports/areas_xls.jasper";
+	
 	private static final String JASPER_GASTOS = "reports/gastos.jasper";	
 	
 
@@ -50,16 +52,20 @@ public class ReportREST {
 	private Report relatorioAreas;
 	
 	@Inject
+	@br.gov.frameworkdemoiselle.report.annotation.Path(JASPER_AREAS_XLS)
+	private Report relatorioAreasXls;
+	
+	@Inject
 	@br.gov.frameworkdemoiselle.report.annotation.Path(JASPER_GASTOS)
 	private Report relatorioGastos;
 	
 	private final String XLS = "xls";
-	
+		
 
 	@GET
 	@Path("pessoas")
 	@Produces(MediaType.APPLICATION_OCTET_STREAM)
-	public Response noticias(@QueryParam("filetype") String filetype, 
+	public Response pessoas(@QueryParam("filetype") String filetype, 
 			@QueryParam("filename") String filename) {
 		
 		Type tipo = Type.PDF;
@@ -83,19 +89,25 @@ public class ReportREST {
 	public Response areas(@QueryParam("filetype") String filetype, 
 			@QueryParam("filename") String filename) {
 
+		Report report = relatorioAreas;
+		if (filename.equals("areas_xls.xls")) {
+			report = relatorioAreasXls;
+		}
+			
 		Type tipo = Type.PDF;
 		String responseType = "application/pdf";		
 		if (filetype.equals(XLS)) {
 			tipo = Type.XLS;
 			responseType =  "application/vnd.ms-excel";
-		}
+		}		
 		
 		List<ReportAreaDTO> lista = new ArrayList<ReportAreaDTO>();
-		ReportAreaDTO report = new ReportAreaDTO();
-		report.setLinhas(areaBC.findAll());
-		lista.add(report);
+		ReportAreaDTO reportDTO = new ReportAreaDTO();
+		reportDTO.setLinhas(areaBC.findAll());
+		lista.add(reportDTO);
 
-		byte[] buffer = relatorioAreas.export(lista, new HashMap<String, Object>(), tipo);
+		
+		byte[] buffer = report.export(lista, new HashMap<String, Object>(), tipo);
 		ResponseBuilder response = Response.ok(buffer);
 		response.type(responseType);
 		response.header("Content-Disposition", String.format("attachment; filename=%s", filename));

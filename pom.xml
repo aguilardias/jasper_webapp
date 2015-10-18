@@ -44,6 +44,13 @@
 		</dependency>
 		
 		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.1.1</version>
+		</dependency>
+		
+		
+		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>3.10-FINAL</version>
@@ -73,6 +80,9 @@
 			<version>4.3.4</version><!--$NO-MVN-MAN-VER$-->
 			<scope>test</scope>
 		</dependency>
+		
+		
+        
 	</dependencies>
 	
 	<build>
@@ -103,7 +113,7 @@
 					<dependency>
 						<groupId>net.sf.jasperreports</groupId>
 						<artifactId>jasperreports</artifactId>
-						<version>6.0.0</version>
+						<version>6.1.1</version>
 						<scope>compile</scope>
 					</dependency>
 					<!-- <dependency>
